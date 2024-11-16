@@ -17,7 +17,8 @@ Route::middleware([
 });
 
     //User-related endpoints
-Route::get('/users/apps/{userID}', [UserController::class, 'showAppointments'])->name('user.appointments');
+Route::get('/users/apps/{userID}', [UserController::class, 'showAppointments'])
+            ->name('user.appointments');
 Route::get('/users/apps/book/{userID}', [UserController::class, 'bookAppointmentForm'])->name('user.appointments');
 Route::post('/users/apps/book', [UserController::class, 'bookAppointment'])->name('user.appointments.book');
 Route::post('/users/apps/cancel/{appointmentID}', [UserController::class, 'cancelAppointment'])->name('user.appointments.cancel');

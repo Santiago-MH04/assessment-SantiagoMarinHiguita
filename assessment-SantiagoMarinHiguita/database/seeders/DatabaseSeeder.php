@@ -21,9 +21,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
             //Invoke the seeders
-        /*$this->call([
+        $this->call([
             RoleSeeder::class,
             UserSeeder::class
-        ]);*/
+        ]);
     }
 }
