@@ -33,7 +33,7 @@ class User extends Authenticatable
         'email',
         'password',
 
-        'comorbidities'
+        'comorbidities' //In the comorbidities field, one can also find the vital signs for the patient’s last appointment. So, a physician can change it
     ];
 
     /**

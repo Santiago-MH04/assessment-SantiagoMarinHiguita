@@ -19,6 +19,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        parent::boot();
+
+        Validator::extend('unique_except_admin_email', function ($attribute, $value, $parameters) {
+            $count = User::where('email', $value)->count();
+            return $count === 0 || $value === 'createdbyadmin@hospital.org';
+        });
     }
 }
