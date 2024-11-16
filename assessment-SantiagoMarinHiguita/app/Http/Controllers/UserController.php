@@ -7,6 +7,28 @@ use App\Models\Physician;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+/**
+
+@OA\Post(
+    path="users/apps",
+    summary="User enabled endpoints",
+    description="Medical appointments management system",
+    tags={"Users","Patients","Management system"},
+    @OA\Parameter(
+        name="access_token",
+        in="query",
+        description="",
+        required="",
+    ),
+    @OA\Response(
+        response=200,
+        description="OK",
+        @OA\MediaType(
+            mediatype="application/JSON"
+        )
+    )
+)
+ */
 class UserController extends Controller
 {
         //Endpoints for users

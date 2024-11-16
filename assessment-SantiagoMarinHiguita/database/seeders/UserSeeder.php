@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Post;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,7 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+            //Migrate using Factory
+        User::factory(5)->create();
     }
 }
