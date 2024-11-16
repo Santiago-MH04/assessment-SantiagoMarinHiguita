@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
         //Admin is also a permission that can be granted to people who, can also register new users
+    public function registerUserForm()
+    {
+            // Redirect or display a success message
+        return view('register.user.form');
+    }
     public function registerUser(Request $request)
     {
         $request->validate([
@@ -18,11 +23,10 @@ class AdminController extends Controller
         User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
-            // ... other fields as needed
+            'password' => Hash::make($request->password)
         ]);
 
-        // Redirect or display a success message
+            // Redirect or display a success message
         return redirect()->back()->with('success', 'User registered successfully.');
     }
 }
